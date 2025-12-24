@@ -9,9 +9,9 @@ import logging
 logging.basicConfig(level=logging.INFO, format='[%(levelname)s] %(message)s')
 
 # تنظیمات تلگرام
-api_id = 23011315
-api_hash = "bc8af51085fd68c13d9ea613571a7adf"
-group = "https://t.me/kkkkkkkkkkkkkmmkm"
+api_id = 0
+api_hash = ""
+group = ""
 
 # نام فایل دیتابیس
 DB_NAME = "telegram_members.db"
@@ -67,7 +67,6 @@ def export_members_to_database():
     if not api_id or not api_hash or group == "examplegroup":
         raise ValueError("لطفاً api_id، api_hash و لینک گروه را درست وارد کنید")
 
-    # آماده‌سازی دیتابیس
     init_database()
 
     with TelegramClient("session_name", api_id, api_hash) as client:
